@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declares the XML document version and encoding -->
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+<!-- Defines the document type (DOCTYPE) and the location of the DTD file -->
+<version>
+    <!-- Root element of the XML document containing all the plugin version information -->
+    <application>videoPlugin</application>
+    <!-- Specifies the name of the application or plugin -->
+    
+    <type>plugins.generic</type>
+    <!-- Indicates the type of plugin, classifying it as a generic plugin -->
+
+    <release>0.1.0.0</release>
+    <!-- Specifies the plugin version -->
+
+    <date>2019-05-15</date>
+    <!-- Indicates the plugin release date -->
+
+    <lazy-load>1</lazy-load>
+    <!-- Specifies if the plugin should be lazily loaded -->
+
+    <class>VideoJsViewerPlugin</class>
+    <!-- Defines the main plugin class -->
+</version>
+<!-- Closes the root element <version> -->
