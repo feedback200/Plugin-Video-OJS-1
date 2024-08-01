@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Declares the XML document version and encoding -->
+<!-- ENG - Declares the XML document version and encoding -->
+<!-- ESP - Declara la versión del documento XML y la codificación -->
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
-<!-- Defines the document type (DOCTYPE) and the location of the DTD file -->
+<!-- ENG - Defines the document type (DOCTYPE) and the location of the DTD file -->
+<!-- ESP - Define el tipo de documento (DOCTYPE) y la ubicación del archivo DTD -->
 <version>
-    <!-- Root element of the XML document containing all the plugin version information -->
+    <!-- ENG - Root element of the XML document containing all the plugin version information -->
+    <!-- ESP - Elemento raíz del documento XML que contiene toda la información de la versión del plugin -->
     <application>videoPlugin</application>
-    <!-- Specifies the name of the application or plugin -->
+    <!-- ENG - Specifies the name of the application or plugin -->
+    <!-- ESP - Especifica el nombre de la aplicación o plugin -->
     
     <type>plugins.generic</type>
-    <!-- Indicates the type of plugin, classifying it as a generic plugin -->
+    <!-- ENG - Indicates the type of plugin, classifying it as a generic plugin -->
+    <!-- ESP - Indica el tipo de plugin, clasificándolo como un plugin genérico -->
 
     <release>0.1.0.0</release>
-    <!-- Specifies the plugin version -->
+    <!-- ENG - Specifies the plugin version -->
+    <!-- ESP - Especifica la versión del plugin -->
 
     <date>2019-05-15</date>
-    <!-- Indicates the plugin release date -->
+    <!-- ENG - Indicates the plugin release date -->
+    <!-- ESP - Indica la fecha de lanzamiento del plugin -->
 
     <lazy-load>1</lazy-load>
-    <!-- Specifies if the plugin should be lazily loaded -->
+    <!-- ENG - Specifies if the plugin should be lazily loaded -->
+    <!-- ESP - Especifica si el plugin debe cargarse de forma diferida -->
 
     <class>VideoJsViewerPlugin</class>
-    <!-- Defines the main plugin class -->
+    <!-- ENG - Defines the main plugin class -->
+    <!-- ESP - Define la clase principal del plugin -->
 </version>
-<!-- Closes the root element <version> -->
+<!-- ENG - Closes the root element <version> -->
+<!-- ESP - Cierra el elemento raíz <version> -->
