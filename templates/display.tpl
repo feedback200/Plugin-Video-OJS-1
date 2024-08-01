@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 <head>
-    <!-- Meta tags for encoding and viewport settings -->
+    <!-- ENG - Meta tags for encoding and viewport settings -->
+    <!-- ESP - Etiquetas meta para la codificación y la configuración del viewport -->
     <meta http-equiv="X-UA-Compatible" content"ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$title|escape}</title>
 
-    <!-- Loading headers, stylesheets, and scripts specific to the frontend context -->
+    <!-- ENG - Loading headers, stylesheets, and scripts specific to the frontend context -->
+    <!-- ESP - Cargando encabezados, hojas de estilo y scripts específicos para el contexto de frontend -->
     {load_header context="frontend" headers=$headers}
     {load_stylesheet context="frontend" stylesheets=$stylesheets}
     {load_script context="frontend" scripts=$scripts}
 
-    <!-- Loading Video.js styles and scripts for video playback -->
+    <!-- ENG - Loading Video.js styles and scripts for video playback -->
+    <!-- ESP - Cargando estilos y scripts de Video.js para la reproducción de video -->
     <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/7.19.2/video.js"></script>
 
-    <!-- Custom styles for the page -->
+    <!-- ENG - Custom styles for the page -->
+    <!-- ESP - Estilos personalizados para la página -->
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -106,7 +110,8 @@
         .video-js {
             width: 100%;
             max-width: 800px;
-            height: 450px; /* Establecer una altura fija para el reproductor */
+            height: 450px; /* ENG - Set a fixed height for the player */
+            /* ESP - Establecer una altura fija para el reproductor */
         }
         .vjs-big-play-button {
             display: none !important;
@@ -132,9 +137,11 @@
 </head>
 <body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
 
-    <!-- Header of the view -->
+    <!-- ENG - Header of the view -->
+    <!-- ESP - Encabezado de la vista -->
     <header class="header_view">
-        <!-- Link to go back to the previous page -->
+        <!-- ENG - Link to go back to the previous page -->
+        <!-- ESP - Enlace para regresar a la página anterior -->
         <a href="javascript:history.go(-1);" class="return">
             <span class="pkp_screen_reader">
                 {if $parent instanceOf Issue}
@@ -145,7 +152,8 @@
             </span>
         </a>
         <h2>{$page_title}</h2>
-        <!-- Link to download the video -->
+        <!-- ENG - Link to download the video -->
+        <!-- ESP - Enlace para descargar el video -->
         <a href="{$videoUrl}" class="download" download>
             <span class="label">
                 {translate key="common.download"}
@@ -155,17 +163,20 @@
             </span>
         </a>
     </header>
-    <!-- Additional space -->
+    <!-- ENG - Additional space -->
+    <!-- ESP - Espacio adicional -->
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <!-- Video container -->
+    <!-- ENG - Video container -->
+    <!-- ESP - Contenedor del video -->
     <div id="videoCanvasContainer" class="galley_view{if !$isLatestPublication} galley_view_with_notice{/if}">
         <div class="video-container">
-            <!-- Video player using Video.js -->
+            <!-- ENG - Video player using Video.js -->
+            <!-- ESP - Reproductor de video usando Video.js -->
             <video id="video-js" class="video-js vjs-default-skin" controls preload="auto" autoplay>
                 <source src="{$videoUrl}" type="video/mp4">
                 <p class="vjs-no-js">
@@ -174,7 +185,8 @@
             </video>
         </div>
     </div>
-    <!-- Additional space -->
+    <!-- ENG - Additional space -->
+    <!-- ESP - Espacio adicional -->
     <br/>
     <br/>
     <br/>
@@ -186,14 +198,16 @@
     <br/>
     <br/>
     <br/>
-    <!-- Additional content -->
+    <!-- ENG - Additional content -->
+    <!-- ESP - Contenido adicional -->
     <div class="content">
         <h1>{$page_title|escape}</h1>
         <h3>{translate key="author.name"}: {$author->getFullName()}</h3>
         <p><strong>{translate key="article.abstract"}:</strong> {$submission->getLocalizedAbstract()}</p>
         <p><strong>{translate key="article.publicationDate"}:</strong> {$datePublished|date_format:"%B %e, %Y"}</p>
     </div>
-    <!-- Video.js script initialization and custom controls -->
+    <!-- ENG - Video.js script initialization and custom controls -->
+    <!-- ESP - Inicialización del script Video.js y controles personalizados -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const player = videojs('video-js');
@@ -202,7 +216,8 @@
             player.ready(function() {
                 this.play();
 
-                // Ensure controls are visible
+                // ENG - Ensure controls are visible
+                // ESP - Asegurar que los controles sean visibles
                 this.controls(true);
 
                 this.on('play', function() {
@@ -213,7 +228,8 @@
                     bigPlayButton.style.display = '';
                 });
 
-                // Add skip buttons to the control bar
+                // ENG - Add skip buttons to the control bar
+                // ESP - Agregar botones de avance rápido a la barra de controles
                 const skipBackwardButton = document.createElement('button');
                 skipBackwardButton.className = 'vjs-control skip-button';
                 skipBackwardButton.innerHTML = '-5s';
@@ -235,4 +251,3 @@
         });
     </script>
 </body>
-</html>
