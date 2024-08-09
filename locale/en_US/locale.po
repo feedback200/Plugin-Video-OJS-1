@@ -52,3 +52,15 @@ msgstr "Download Video"
 # Message for when JavaScript is disabled
 msgid "plugins.generic.videoJsViewer.noJsMessage"
 msgstr "You need to enable JavaScript to view the video."
+
+# Author Affiliation
+msgid "author.affiliation"
+msgstr "Affiliation"
+
+#Article Keywords
+msgid "article.keywords"
+msgstr "Article Keywords"
+
+#Orcid Author
+msgid "author.orcid"
+msgstr "ORCID" 
