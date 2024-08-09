@@ -2,105 +2,70 @@
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 <head>
     <!-- Meta tags for encoding and viewport settings -->
-    <!-- ENG - Meta tags for encoding and viewport settings -->
-    <!-- ESP - Etiquetas meta para codificación y configuración del viewport -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$title|escape}</title>
 
     <!-- Loading headers, stylesheets, and scripts specific to the frontend context -->
-    <!-- ENG - Loading headers, stylesheets, and scripts specific to the frontend context -->
-    <!-- ESP - Cargando encabezados, hojas de estilo y scripts específicos del contexto de frontend -->
     {load_header context="frontend" headers=$headers}
     {load_stylesheet context="frontend" stylesheets=$stylesheets}
     {load_script context="frontend" scripts=$scripts}
 
     <!-- Loading Video.js styles and scripts for video playback -->
-    <!-- ENG - Loading Video.js styles and scripts for video playback -->
-    <!-- ESP - Cargando estilos y scripts de Video.js para la reproducción de video -->
     <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/7.19.2/video.js"></script>
 
     <!-- Custom styles for the page -->
-    <!-- ENG - Custom styles for the page -->
-    <!-- ESP - Estilos personalizados para la página -->
     <style>
         body {
+            font-family: Arial, sans-serif;
             text-align: justify;
             line-height: 1.6;
             background-color: white;
             color: #333;
         }
-        .header_view {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-align: justify;
-            margin-bottom: 571px;
-            padding: 31.5px;
-            background-color: #1e6292;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .header_view a {
-            text-decoration: none;
-            color: #1e6292;
-        }
-        .header_view .return {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            width: 34px;
-            height: 38px;
-            line-height: 37.5px;
-            text-align: center;
-            border-radius: 50%;
-            font-size: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .header_view .download {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            width: auto;
-            height: auto;
-            padding: 10px;
-            border-radius: 9px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            color: #1e6292; 
-        }
-        .header_view h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .header_view h2 {
-            position: absolute;
-            top: 10px;
-            left: 50px;
-            font-size: 25px;
-            color: white;
-            margin: 0;
-            padding: 0 50px;
-        }
-        @media (max-width: 600px) {
-            .header_view h2 {
-                font-size: 12px;
-                top: 5px;
-                left: 45px;
-            }
-			.header_view {
-             margin-bottom: 200px !important;
-        }
-        }
-        .content {
-            max-width: 1606px;
+         .header_view .page_title {
+            display: block;
+            padding-left: 2.857rem;
+            max-width: 100%;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #fff;
+         }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 2072px;
             width: 92.9%;
             margin: 20px auto;
+        }
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            position: relative;
+            box-sizing: border-box;
+            height: 590px;
+        }
+        .video-js {
+            height: 590px;
+            max-width: 100%;
+            width: 100%;
+        }
+        .content {
+            flex: 0.5;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 19px;
+            max-height: 592px;
+            overflow-y: auto; 
         }
         .content h3, .content p {
             margin: 0 0 10px;
@@ -122,49 +87,31 @@
             line-height: 1.8;
             color: black;
         }
-
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            padding: 20px;
-            position: relative;
-            width: 100%;
-            box-sizing: border-box;
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            .video-container {
+                margin: 20px 0 0 0; 
+                padding: 0 !important; 
+                height: 200px;
+                width: 100%;
+            }
+            .video-js {
+                width: 100%;
+                height: 220px; 
+                font-size: 10px !important;
+            }
+            .content{
+                width: 100%;
+                margin-top: 20px;
+                max-height: 100%;
+                overflow-y: visible;
+            }
+            .galley_view {
+                padding: 20px !important;
+            }
         }
-
-        .video-js {
-           height: 590px;
-           max-width: 1606px;
-           width: 100%;
-       }
-
-       @media (max-width: 600px) {
-          .video-container {
-             margin: 50px 0 0 0; 
-             padding: 0 !important; 
-			 height: 200px;
-			 width: 100%;
-			 
-        }
-
-        .video-js {
-           width: 100%;
-           height: 180px; 
-		   font-size: 10px !important;
-       }
-
-       .content{
-           width: 88.8%;
-       }
-	   
-	   .galley_view {
-	        padding: 20px !important;
-	   }
-    }
-
-
         .video-js {
             font-size: 15px;
         }
@@ -195,19 +142,15 @@
             right: 0;
             bottom: 0;
             overflow-y: hidden;
-			padding: 34.5px;
+            padding: 34.5px;
         }
     </style>
 </head>
 <body class="pkp_page_{$requestedPage|escape} pkp_op_{$requestedOp|escape}">
 
     <!-- Header of the view -->
-    <!-- ENG - Header of the view -->
-    <!-- ESP - Encabezado de la vista -->
     <header class="header_view">
         <!-- Link to go back to the previous page -->
-        <!-- ENG - Link to go back to the previous page -->
-        <!-- ESP - Enlace para volver a la página anterior -->
         <a href="javascript:history.go(-1);" class="return">
             <span class="pkp_screen_reader">
                 {if $parent instanceOf Issue}
@@ -217,10 +160,8 @@
                 {/if}
             </span>
         </a>
-        <h2>{$page_title}</h2>
+        <a class="title">{$page_title}</a>
         <!-- Link to download the video -->
-        <!-- ENG - Link to download the video -->
-        <!-- ESP - Enlace para descargar el video -->
         <a href="{$videoUrl}" class="download" download>
             <span class="label">
                 {translate key="common.download"}
@@ -230,14 +171,12 @@
             </span>
         </a>
     </header>
-    <!-- Video container -->
-    <!-- ENG - Video container -->
-    <!-- ESP - Contenedor de video -->
-    <div id="videoCanvasContainer" class="galley_view{if !$isLatestPublication} galley_view_with_notice{/if}">
+
+    <!-- Main container for video and content -->
+    <div class="container">
+        <!-- Video container -->
         <div class="video-container">
             <!-- Video player using Video.js -->
-            <!-- ENG - Video player using Video.js -->
-            <!-- ESP - Reproductor de video usando Video.js -->
             <video id="video-js" class="video-js vjs-default-skin" controls preload="auto" autoplay="true">
                 <source src="{$videoUrl}" type="video/mp4">
                 <p class="vjs-no-js">
@@ -245,19 +184,41 @@
                 </p>
             </video>
         </div>
+        <!-- Additional content -->
+<div class="content">
+    <h1>{$page_title|escape}</h1>
+
+    {if $authors}
+    <div class="authors">
+        <h3>{translate key="article.authors"}:</h3>
+        {foreach from=$authors item=author}
+            <div class="author-details">
+                <p><strong>{translate key="author.name"}:</strong> {$author.name|escape}</p>
+                {if $author.orcid}
+                    <p><strong>{translate key="author.orcid"}:</strong> <a href="{$author.orcid|escape}" target="_blank">{$author.orcid|escape}</a></p>
+                {/if}
+                {if $author.affiliation}
+                    <p><strong>{translate key="author.affiliation"}:</strong> {$author.affiliation|escape}</p>
+                {/if}
+            </div>
+        {/foreach}
     </div>
-    <!-- Additional content -->
-    <!-- ENG - Additional content -->
-    <!-- ESP - Contenido adicional -->
-    <div class="content">
-        <h1>{$page_title|escape}</h1>
-        <h3>{translate key="author.name"}: {$author->getFullName()}</h3>
-        <p><strong>{translate key="article.abstract"}:</strong> {$submission->getLocalizedAbstract()}</p>
-        <p><strong>{translate key="article.publicationDate"}:</strong> {$datePublished|date_format:"%B %e, %Y"}</p>
-    </div>
+    {/if}
+
+    {if $doi}
+        <p><strong>DOI:</strong> <a href="https://doi.org/{$doi}" target="_blank">{$doi}</a></p>
+    {/if}
+
+     {if $keywords}
+        <p><strong>{translate key="article.keywords"}:</strong> {foreach from=$keywords item=keyword}{$keyword|escape}{if !$smarty.foreach.keywords.last}, {/if}{/foreach}</p>
+    {/if}
+    <p><strong>{translate key="article.abstract"}:</strong> {$submission->getLocalizedAbstract()}</p>
+    <p><strong>{translate key="article.publicationDate"}:</strong> {$datePublished|date_format:"%B %e, %Y"}</p>
+    
+</div>
+</div>
+
     <!-- Video.js script initialization and custom controls -->
-    <!-- ENG - Video.js script initialization and custom controls -->
-    <!-- ESP - Inicialización del script de Video.js y controles personalizados -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const player = videojs('video-js');
@@ -267,8 +228,6 @@
                 this.play();
 
                 // Ensure controls are visible
-                // ENG - Ensure controls are visible
-                // ESP - Asegurar que los controles sean visibles
                 this.controls(true);
 
                 this.on('play', function() {
@@ -280,8 +239,6 @@
                 });
 
                 // Add skip buttons to the control bar
-                // ENG - Add skip buttons to the control bar
-                // ESP - Agregar botones de adelantar y retroceder a la barra de controles
                 const skipBackwardButton = document.createElement('button');
                 skipBackwardButton.className = 'vjs-control skip-button';
                 skipBackwardButton.innerHTML = '-5s';
@@ -300,7 +257,6 @@
                 controlBar.appendChild(skipBackwardButton);
                 controlBar.appendChild(skipForwardButton);
             });
-			
         });
     </script>
 </body>
