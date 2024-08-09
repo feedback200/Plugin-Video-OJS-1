@@ -49,3 +49,15 @@ msgstr "Descargar Video"
 # Mensaje para cuando JavaScript está deshabilitado
 msgid "plugins.generic.videoJsViewer.noJsMessage"
 msgstr "Necesitas habilitar JavaScript para ver el video."
+
+# Afiliacion del Autor
+msgid "author.affiliation"
+msgstr "Afiliación"
+
+#Palabras Claves
+msgid "article.keywords"
+msgstr "Palabras Claves"
+
+#Orcid Autor
+msgid "author.orcid"
+msgstr "ORCID" 
