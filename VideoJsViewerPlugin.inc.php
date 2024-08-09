@@ -59,14 +59,14 @@ class VideoJsViewerPlugin extends GenericPlugin {
      * @return bool true if successfully processed, false otherwise
      */
     function submissionCallback($hookName, $args) {
-        // Obtener argumentos del hook
+        
         $request = $args[0];
         $issue = $args[1];
         $galley = $args[2];
         $submission = $args[3];
         $submissionFile = $galley->getFile();
     
-        // Obtener lista de autores
+        // Get list of authors
         $authors = $submission->getCurrentPublication()->getData('authors');
         $authorDetails = [];
         foreach ($authors as $author) {
